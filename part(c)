@@ -1,0 +1,39 @@
+//Write user defined Java functions to carry out calculation as mentioned in Part (a). This function should take an integer number as parameter, calculates its binary representation, stores it in an integer array and returns that array of integers (that contains its binary digits) as return value
+        /*
+        TEST CASE(1);
+        32=10000
+        TEST CASE(2);
+        27=11011
+        TEST CASE(3);
+        26=11010
+        Enter a number:
+        number----> binary number:
+        32/2=16----reminder%=0
+        16/2=8-----reminder%=0
+        8/2=4------reminder%=0
+        4/2=2------reminder%=0
+        2/2=1------reminder%=0
+        1/2=0.5----reminder%=1
+        [1 0 0 0 0 0]
+        "First decided how many index in a array";
+        */
+public static int[] decimalToBinaryArray(int num) {
+    int temp = num;
+    int count = 0;
+
+    // count digits
+    while (temp > 0) {
+        temp /= 2;
+        count++;
+    }
+
+    int[] binary = new int[count];
+
+    // fill array from end
+    for (int i = count - 1; i >= 0; i--) {
+        binary[i] = num % 2;
+        num /= 2;
+    }
+
+    return binary;
+}
