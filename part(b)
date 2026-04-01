@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        // Write user defined Java functions to carry out calculation as mentioned in Part (a). This function should take an integer number as parameter, calculates its binary representation, stores these bits in a string and returns that string (that has its binary digit representation) as return value:
+        /*
+        TEST CASE:
+        Function;
+        calculation--->part(a);
+        take integer as a parameter;
+        
+        */
+        Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a number(n)");
+            int n = sc.nextInt();
+            String result=calculation(n);
+            System.out.println(result);
+    }
+    
+    public static String calculation(int n){
+        String binary ="";
+        for(int i = n;i>0;i=i/2){
+            int reminder = i%2;
+            binary = reminder + binary;
+        }
+        return binary;
+    }
+}
